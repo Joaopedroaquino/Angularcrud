@@ -1,0 +1,30 @@
+<h1 mat-dialog-title> Adicionar Usuario</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Nome do Usuario</mat-label>
+        <input matInput placeholder="Usuario">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Setor</mat-label>
+        <mat-select placeholder="Categoria">
+            <mat-option value="">TI</mat-option>
+            <mat-option value="">Trafego</mat-option>
+            <mat-option value="">ADS</mat-option>
+            <mat-option value="">DBA</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label> Insira a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <label for=""> <h1> Permissao </h1> </label>
+      <mat-radio-group>
+        <mat-radio-button   class="example-radio-group" *ngFor=" let permission of permissionsList" [value]= "permission">
+            {{permission}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+
+</div>
